@@ -15,8 +15,8 @@ CREATE TABLE cats (
   name VARCHAR(255),
   age INT4,
   gender VARCHAR(255),
+  color VARCHAR(255),
   description TEXT,
-  vaccinated VARCHAR(255),
   admission_date VARCHAR(255),
   status VARCHAR(255),
   owner_id INT4 REFERENCES owners(id)
