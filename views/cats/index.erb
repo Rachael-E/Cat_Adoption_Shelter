@@ -1,0 +1,16 @@
+<h1> Cats housed at Maggie's Moggies </h1>
+
+<div id="cat-wrapper">
+  <% @cats.each do |cat| %>
+
+  <div class="cat">
+    <h3><a href="/cats/<%= cat.id%>"><%= cat.name %></a>
+    </h3>
+    <p>Age: <%= cat.age %></p>
+
+
+  </div>
+
+  <% end %>
+
+</div>
