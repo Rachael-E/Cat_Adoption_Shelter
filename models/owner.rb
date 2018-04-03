@@ -6,7 +6,7 @@ class Owner
   attr_reader :id
   attr_accessor :name, :age, :background, :accommodation_type, :total_existing_cats
 
-####  INITIALIZE #######
+  ####  INITIALIZE #######
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -18,7 +18,7 @@ class Owner
   end
 
   ########################
-    ## *** CRUD *** ##
+  ## *** CRUD *** ##
   ########################
 
   ### CREATE ###
@@ -82,14 +82,28 @@ class Owner
 
   ########### INSTANCE METHODS ##################
 
- ######### CLASS METHODS  ##################
- def self.find(id)
-   sql = "SELECT * FROM owners WHERE id = $1"
-   values = [id]
-   result = SqlRunner.run(sql, values).first
-   owner = Owner.new(result)
-   return owner
- end
+  def cat()
+    cat = Cat.find(@id)
+    return cat
+
+    # sql = "SELECT * FROM cats
+    # WHERE owner_id = $1"
+    # values = [@id]
+    # cat_hashes = SqlRunner.run(sql, values)
+    # cat_objects = cat_hashes.map { |cat_hash| Cat.new(cat_hash) }
+    # return cat_objects
+  end
+
+
+
+  ######### CLASS METHODS  ##################
+  def self.find(id)
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    owner = Owner.new(result)
+    return owner
+  end
 
 
 end

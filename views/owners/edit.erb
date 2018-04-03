@@ -1,0 +1,37 @@
+<h2>Edit <%= @owner.name %></h2>
+<form method="POST"
+action="/owners/<%=@owner.id%>">
+<div class="form-wrapper">
+
+
+      <div class="form-el">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%=@owner.name %>"/>
+      </div>
+
+      <div class="form-el">
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age" value="<%=@owner.age %>"/>
+      </div>
+
+      <div class="form-el">
+        <label for="background">Background:</label>
+        <input type="text" name="background" id="background" value="<%=@owner.background %>"/>
+      </div>
+
+      <div class="form-el">
+        <label for="accommodation_type">Accommodation:</label>
+        <input type="text" name="accommodation_type" id="accommodation_type" value="<%=@owner.accommodation_type %>"/>
+      </div>
+
+      <div class="form-el">
+        <label for="total_existing_cats">Number of existing cats:</label>
+        <input type="text" name="total_existing_cats" id="total_existing_cats" value="<%=@owner.total_existing_cats %>"/>
+      </div>
+
+      <div class="form-el">
+        <input type="submit" value="Save changes to this owner"/>
+      </div>
+
+    </div>
+  </form>
