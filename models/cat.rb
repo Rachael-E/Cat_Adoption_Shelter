@@ -7,6 +7,8 @@ attr_reader :id
 
 attr_accessor :owner_id, :name, :age, :gender, :description, :color, :admission_date, :status
 
+######  INITIALIZE #######
+
 def initialize( options )
   @id = options['id'].to_i if options['id']
   @name = options['name']
@@ -19,6 +21,12 @@ def initialize( options )
   @owner_id = options['owner_id'].to_i
 
 end
+
+########################
+  ## *** CRUD *** ##
+########################
+
+### CREATE ###
 
 def save()
     sql = "INSERT INTO cats
@@ -43,11 +51,62 @@ def save()
     @id = id
   end
 
+  ###  READ  ###
+  def self.all()
+    sql = "SELECT * FROM cats"
+    cats_hashes = SqlRunner.run(sql)
+    cats_objects = cats_hashes.map{|cat| Owner.new(cat)}
+    return cats_objects
+  end
+
+  ### UPDATE ###
+  def update()
+    sql = "UPDATE cats
+    SET (
+      name,
+      age,
+      gender,
+      color,
+      description,
+      admission_date,
+      status,
+      owner_id
+    )
+    =
+    ($1, $2, $3, $4, $5, $6, $7, $8)
+    WHERE id = $9"
+    values = [@name, @age, @gender, @color, @description, @admission_date, @status, @owner_id, @id]
+    SqlRunner.run( sql, values )
+  end
+
+  ### DELETE ###
+  def delete()
+    sql = "DELETE FROM cats WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM cats"
     SqlRunner.run( sql )
   end
 
+######### INSTANCE METHODS ###############
+
+
+def owner
+  owner = Owner.find(@owner_id)
+  return owner
+end
+
+######### CLASS METHODS  ##################
+def self.find(id)
+  sql = "SELECT * FROM cats WHERE id = $1"
+  values = [id]
+  result = SqlRunner.run(sql, values).first
+  cat = Cat.new(result)
+  return cat
+end
 
 
 
