@@ -5,8 +5,33 @@
 
 
     <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%=@cat.name %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="age">Age:</label>
+      <input type="text" name="age" id="age" value="<%=@cat.age %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="gender">Gender:</label>
+      <input type="text" name="gender" id="gender" value="<%=@cat.gender %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="color">Color:</label>
+      <input type="text" name="color" id="color" value="<%=@cat.color %>"/>
+    </div>
+
+    <div class="form-el">
       <label for="description">Description:</label>
       <input type="text" name="description" id="description" value="<%=@cat.description %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="admission_date">Admission Date:</label>
+      <input type="text" name="admission_date" id="admission_date" value="<%=@cat.admission_date %>"/>
     </div>
 
     <div class="form-el">
@@ -29,3 +54,10 @@
             <% end %>
           </select>
         </div>
+
+    <div class="form-el">
+      <input type="submit" value="Save changes to this pet"/>
+    </div>
+
+  </div>
+</form>

@@ -18,3 +18,9 @@ get '/cats/:id/edit' do
   @cat = Cat.find(params['id'])
   erb(:"cats/edit")
 end
+
+post '/cats/:id' do
+  cat = Cat.new(params)
+  cat.update
+  redirect to "/cats/#{params['id']}"
+end
