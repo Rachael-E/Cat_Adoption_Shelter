@@ -1,0 +1,17 @@
+<h1> Owners registered at Maggie's Moggies </h1>
+
+<div id="owner-wrapper">
+  <% @owners.each do |owner| %>
+
+  <div class="owner">
+    <h3><a href="/owners/<%=owner.id%>"><%=owner.name%></a>
+    </h3>
+    <p>Age: <%= owner.age %></p>
+    <p>Background: <%= owner.background %></p>
+    <p>Accommodation Type: <%= owner.accommodation_type %></p>
+    <p>Number of existing cats: <%= owner.total_existing_cats %></p>
+
+  </div>
+
+  <% end %>
+</div>

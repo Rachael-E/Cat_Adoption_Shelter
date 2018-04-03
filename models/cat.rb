@@ -4,7 +4,6 @@ require_relative( '../db/sql_runner' )
 class Cat
 
 attr_reader :id
-
 attr_accessor :owner_id, :name, :age, :gender, :description, :color, :admission_date, :status
 
 ######  INITIALIZE #######
@@ -55,7 +54,7 @@ def save()
   def self.all()
     sql = "SELECT * FROM cats"
     cats_hashes = SqlRunner.run(sql)
-    cats_objects = cats_hashes.map{|cat| Owner.new(cat)}
+    cats_objects = cats_hashes.map{|cat| Cat.new(cat)}
     return cats_objects
   end
 

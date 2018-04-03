@@ -7,3 +7,14 @@ get '/cats' do
   @cats = Cat.all
   erb( :"cats/index" )
 end
+
+get '/cats/:id' do
+  @cat = Cat.find(params['id'])
+  erb(:"cats/show")
+end
+
+get '/cats/:id/edit' do
+  @owners = Owner.all
+  @cat = Cat.find(params['id'])
+  erb(:"cats/edit")
+end

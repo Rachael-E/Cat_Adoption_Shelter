@@ -4,9 +4,14 @@
   <% @cats.each do |cat| %>
 
   <div class="cat">
-    <h3><a href="/cats/<%= cat.id%>"><%= cat.name %></a>
+    <h3><a href="/cats/<%= cat.id%>"><%=cat.name%></a>
     </h3>
     <p>Age: <%= cat.age %></p>
+    <p>Gender: <%= cat.gender %></p>
+    <p>Color: <%= cat.color %></p>
+    <p>Description: <%= cat.description %></p>
+    <p>Admission Date: <%= cat.admission_date %></p>
+    <p>Status: <%= cat.status %></p>
 
 
   </div>
