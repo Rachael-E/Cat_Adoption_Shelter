@@ -1,0 +1,58 @@
+<h2>Register a new moggie</h2>
+  <form method="POST" action="/cats">
+    <div class="form-wrapper">
+
+      <div class="form-el">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+      </div>
+
+      <div class="form-el">
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age" />
+      </div>
+
+      <div class="form-el">
+        <label for="gender">Gender:</label>
+        <input type="text" name="gender" id="gender" />
+      </div>
+
+      <div class="form-el">
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color" />
+      </div>
+
+      <div class="form-el">
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" />
+      </div>
+
+      <div class="form-el">
+        <label for="admission_date">Admission Date:</label>
+        <input type="text" name="admission_date" id="admission_date" />
+      </div>
+
+      <div class="form-el">
+        <label for="status">Status:</label>
+        <input type="text" name="status" id="status" />
+      </div>
+
+      <div class="form-el">
+        <label for="owner_select">Select new owner:</label>
+        <select name="owner_id" id="owner_select">
+        <% @owners.each do |owner| %>
+
+            <option value='<%= owner.id %>'><%= owner.name%></option>
+
+
+              <% end %>
+            </select>
+          </div>
+
+      <div class="form-el">
+        <input type="submit" value="Add this cat to Maggie's Moggies"/>
+      </div>
+
+
+  </div>
+</form>

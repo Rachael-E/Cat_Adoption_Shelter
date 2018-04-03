@@ -8,10 +8,25 @@ get '/cats' do
   erb( :"cats/index" )
 end
 
+get '/cats/new' do
+  @owners = Owner.all
+  erb(:"cats/new")
+end
+
+post '/cats' do
+  Cat.new(params).save
+  redirect to '/cats'
+end
+
 get '/cats/:id' do
   @cat = Cat.find(params['id'])
   erb(:"cats/show")
 end
+
+
+
+
+
 
 get '/cats/:id/edit' do
   @owners = Owner.all
