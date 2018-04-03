@@ -19,9 +19,26 @@ owner2 = Owner.new({
   'accommodation_type' => 'flat, no access to garden',
   'total_existing_cats' => 0
   })
-# binding.pry
+owner3 = Owner.new({
+  'name' => 'Rachael',
+  'age' => 31,
+  'background' => 'I would like a loyal, intelligent independant cat',
+  'accommodation_type' => 'house, garden, on a busy road',
+  'total_existing_cats' => 0
+  })
+owner4 = Owner.new({
+  'name' => 'Maggie',
+  'age' => 40,
+  'background' => 'I am the owner of the pet shelter. When the pets have no owner, they temporarily belong to me',
+  'accommodation_type' => 'Maggie/s Moggies Cat Shelter',
+  'total_existing_cats' => 10
+  })
+
+
   owner1.save()
   owner2.save()
+  owner3.save()
+  owner4.save()
 
 cat1 = Cat.new({
   'name' => 'Arokh',
@@ -38,11 +55,33 @@ cat2 = Cat.new({
   'age' => 6,
   'gender' => 'Female',
   'color' => 'Tawny',
-  'description' => 'Slightly physcho, will stare at you constantly, maybe gives some love if food is given',
+  'description' => 'Slightly psycho, constantly plotting your demise, stares constantly; will love you fiercely all other times',
   'admission_date' => '08/01/18',
   'status' => 'Adopted',
   'owner_id' => owner2.id
   })
+cat3 = Cat.new({
+  'name' => 'Stavros',
+  'age' => 5,
+  'gender' => 'Male',
+  'color' => 'black and grey',
+  'description' => 'The biggest playful softie with award winning fluffy eyebrows. Secretly loves hugs. Best kept inside, may run away.',
+  'admission_date' => '08/02/18',
+  'status' => 'Adoptable',
+  'owner_id' => owner4.id
+  })
+cat4 = Cat.new({
+  'name' => 'Tuff McFluff',
+  'age' => 12,
+  'gender' => 'Male',
+  'color' => 'Grey',
+  'description' => 'Retired show kitty, loves to laze around in the sunshine all day',
+  'admission_date' => '08/03/18',
+  'status' => 'Adoptable',
+  'owner_id' => owner4.id
+  })
 
   cat1.save()
   cat2.save()
+  cat3.save()
+  cat4.save()
