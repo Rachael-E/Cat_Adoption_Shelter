@@ -1,0 +1,31 @@
+<h2>Edit <%= @cat.name %></h2>
+<form method="POST" action="/cats/<%=@cat.id%>">
+  <div class="form-wrapper">
+
+
+
+    <div class="form-el">
+      <label for="description">Description:</label>
+      <input type="text" name="description" id="description" value="<%=@cat.description %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="status">Status:</label>
+      <input type="text" name="status" id="status" value="<%=@cat.status %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="owner_select">Select new owner:</label>
+      <select name="owner_id" id="owner_select"
+      selected="<%= @cat.owner_id %>">
+      <% @owners.each do |owner| %>
+        <% if owner.id == @cat.owner_id %>
+          <option value=<%= owner.id %>
+            selected><%= owner.name%></option>
+            <% else %>
+            <option value=<%= owner.id %>><%=owner.name %></option>
+            <% end %>
+
+            <% end %>
+          </select>
+        </div>
