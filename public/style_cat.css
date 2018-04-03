@@ -2,4 +2,35 @@ body {
   font-family: 'Indie Flower', cursive;
   color: #a04e5c;
   background-color: #e4dbdf;
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 25px;
+  text-align: center;
+  border-width: 2px;
+  border-color: black;
+  border-style: dashed;
+  padding: 10px;
+}
+
+#logo {
+text-align: center;
+  padding: 20px;
+  background-color: #9e5e5e;
+  color: white;
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: #27736d;
+}
+
+a:hover {
+  color: #e48609;
+}
+
+.owner {
+
 }

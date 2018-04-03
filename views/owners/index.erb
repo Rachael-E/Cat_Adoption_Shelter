@@ -1,4 +1,4 @@
-<h1> Owners registered at Maggie's Moggies </h1>
+<h2> Owners registered at Maggie's Moggies </h2>
 
 <div id="owner-wrapper">
   <% @owners.each do |owner| %>
@@ -11,7 +11,7 @@
     <p>Accommodation Type: <%= owner.accommodation_type %></p>
     <p>Number of existing cats: <%= owner.total_existing_cats %></p>
     <p> Adopted cats: <%= owner.cat %></p>
-
+<hr></hr>
   </div>
 
   <% end %>
