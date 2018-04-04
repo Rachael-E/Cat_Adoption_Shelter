@@ -82,16 +82,16 @@ class Owner
 
   ########### INSTANCE METHODS ##################
 
-  def cat()
-    cat = Cat.find(@id)
-    return cat
-
-    # sql = "SELECT * FROM cats
-    # WHERE owner_id = $1"
-    # values = [@id]
-    # cat_hashes = SqlRunner.run(sql, values)
-    # cat_objects = cat_hashes.map { |cat_hash| Cat.new(cat_hash) }
-    # return cat_objects
+  def cats()
+    # cat = Cat.find(@id)
+    # return cat
+  #
+    sql = "SELECT * FROM cats
+     WHERE owner_id = $1"
+    values = [@id]
+    cat_hashes = SqlRunner.run(sql, values)
+    cat_objects = cat_hashes.map { |cat_hash| Cat.new(cat_hash) }
+    return cat_objects
   end
 
 

@@ -23,11 +23,6 @@ get '/cats/:id' do
   erb(:"cats/show")
 end
 
-
-
-
-
-
 get '/cats/:id/edit' do
   @owners = Owner.all
   @cat = Cat.find(params['id'])
@@ -38,4 +33,10 @@ post '/cats/:id' do
   cat = Cat.new(params)
   cat.update
   redirect to "/cats/#{params['id']}"
+end
+
+post '/cats/:id/delete' do
+  cat = Cat.find(params['id'])
+  cat.delete
+  redirect to '/cats'
 end

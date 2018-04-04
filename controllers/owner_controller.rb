@@ -18,9 +18,6 @@ post '/owners' do
   redirect to '/owners'
 end
 
-
-
-
 get '/owners/:id' do
   @owner = Owner.find(params['id'])
   erb(:"owners/show")
@@ -36,4 +33,10 @@ post '/owners/:id' do
   owner = Owner.new(params)
   owner.update
   redirect to "/owners/#{params['id']}"
+end
+
+post '/owners/:id/delete' do
+  owner = Owner.find(params['id'])
+  owner.delete
+  redirect to '/owners'
 end
