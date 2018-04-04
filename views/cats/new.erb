@@ -37,7 +37,6 @@
       <div class="form-el">
         <label for="adoptable">Adoptable?:</label>
       <select id="adoptable" name="adoptable">
-        <option value="f">No</option>
         <option value="t">Yes</option>
       </select>
       </div>
@@ -46,10 +45,12 @@
         <label for="owner_select">Select new owner:</label>
         <select name="owner_id" id="owner_select">
         <% @owners.each do |owner| %>
+        <% if owner.name == "Maggie" %>
 
             <option value='<%= owner.id %>'><%= owner.name%></option>
 
 
+              <% end %>
               <% end %>
             </select>
           </div>
