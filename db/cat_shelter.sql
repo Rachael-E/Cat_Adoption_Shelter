@@ -17,7 +17,7 @@ CREATE TABLE cats (
   gender VARCHAR(255),
   color VARCHAR(255),
   description TEXT,
-  admission_date VARCHAR(255),
+  admission_date DATE,
   status VARCHAR(255),
   owner_id INT4 REFERENCES owners(id)
 );
