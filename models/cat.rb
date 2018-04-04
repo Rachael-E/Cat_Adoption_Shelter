@@ -4,7 +4,7 @@ require_relative( '../db/sql_runner' )
 class Cat
 
 attr_reader :id
-attr_accessor :owner_id, :name, :age, :gender, :description, :color, :admission_date, :status
+attr_accessor :owner_id, :name, :age, :gender, :description, :color, :admission_date, :adoptable
 
 ######  INITIALIZE #######
 
@@ -15,10 +15,9 @@ def initialize( options )
   @gender = options['gender']
   @color = options['color']
   @description = options['description']
-  @admission_date = options['admission_date']
-  @status = options['status']
+  @admission_date = Date.parse(options['admission_date'])
+  @adoptable = options['adoptable']
   @owner_id = options['owner_id'].to_i
-
 end
 
 ########################
@@ -36,7 +35,7 @@ def save()
       color,
       description,
       admission_date,
-      status,
+      adoptable,
       owner_id
     )
     VALUES
@@ -44,7 +43,7 @@ def save()
       $1, $2, $3, $4, $5, $6, $7, $8
     )
     RETURNING id"
-    values = [@name, @age, @gender, @color, @description, @admission_date, @status, @owner_id]
+    values = [@name, @age, @gender, @color, @description, @admission_date, @adoptable, @owner_id]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id
@@ -68,13 +67,13 @@ def save()
       color,
       description,
       admission_date,
-      status,
+      adoptable,
       owner_id
     )
     =
     ($1, $2, $3, $4, $5, $6, $7, $8)
     WHERE id = $9"
-    values = [@name, @age, @gender, @color, @description, @admission_date, @status, @owner_id, @id]
+    values = [@name, @age, @gender, @color, @description, @admission_date, @adoptable, @owner_id, @id]
     SqlRunner.run( sql, values )
   end
 

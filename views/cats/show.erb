@@ -6,7 +6,7 @@
 <p>Color: <%= @cat.color %></p>
 <p>Description: <%= @cat.description %></p>
 <p>Admission Date: <%= @cat.admission_date %></p>
-<p>Status: <%= @cat.status %></p>
+<p>Adoption status: <%= @cat.adoptable %></p>
 
 <a href="/cats/<%= @cat.id%>/edit">Edit Cat Details</a>
 <form action="/cats/<%= @cat.id%>/delete" method="POST"><input type="submit" value="Remove cat permanently from database"></form>

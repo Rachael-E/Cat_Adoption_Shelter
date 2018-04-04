@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/cat.rb')
 require_relative('../models/owner.rb')
+require('pry')
 
 get '/cats' do
   @cats = Cat.all

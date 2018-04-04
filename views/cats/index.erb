@@ -10,8 +10,8 @@
     <p>Gender: <%= cat.gender %></p>
     <p>Color: <%= cat.color %></p>
     <p>Description: <%= cat.description %></p>
-    <p>Admission Date: <%= cat.admission_date %></p>
-    <p>Status: <%= cat.status %></p>
+    <p>Admission Date: <%= cat.admission_date.strftime('%d %b %Y') %></p>
+    <p>Adoptable?: <%= cat.adoptable == 't' ? "Yes" : "No" %></p>
     <p>Owner: <%= cat.owner.name %></p>
 <hr>
 

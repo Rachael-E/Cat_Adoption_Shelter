@@ -47,7 +47,7 @@ cat1 = Cat.new({
   'color' => 'White and ginger',
   'description' => 'Floppy, so fluffy, smiles constantly. Has not learned to meow yet',
   'admission_date' => '11/12/17',
-  'status' => 'Adopted',
+  'adoptable' => false,
   'owner_id' => owner1.id
   })
 cat2 = Cat.new({
@@ -57,7 +57,7 @@ cat2 = Cat.new({
   'color' => 'Tawny',
   'description' => 'Slightly psycho, constantly plotting your demise, stares constantly; will love you fiercely all other times',
   'admission_date' => '08/01/18',
-  'status' => 'Adopted',
+  'adoptable' => false,
   'owner_id' => owner2.id
   })
 cat3 = Cat.new({
@@ -67,7 +67,7 @@ cat3 = Cat.new({
   'color' => 'black and grey',
   'description' => 'The biggest playful softie with award winning fluffy eyebrows. Secretly loves hugs. Best kept inside, may run away.',
   'admission_date' => '08/02/18',
-  'status' => 'Adoptable',
+  'adoptable' => true,
   'owner_id' => owner4.id
   })
 cat4 = Cat.new({
@@ -77,7 +77,7 @@ cat4 = Cat.new({
   'color' => 'Grey',
   'description' => 'Retired show kitty, loves to laze around in the sunshine all day',
   'admission_date' => '08/03/18',
-  'status' => 'Adoptable',
+  'adoptable' => true,
   'owner_id' => owner4.id
   })
 

@@ -6,17 +6,17 @@
 
     <div class="form-el">
       <label for="name">Name:</label>
-      <input name="text" name="name" id="name" value="<%=@cat.name %>"readonly/>
+      <input type="text" name="name" id="name" value="<%=@cat.name %>" readonly/>
     </div>
 
     <div class="form-el">
       <label for="age">Age:</label>
-      <input type="text" name="age" id="age" value="<%=@cat.age %>"readonly/>
+      <input type="text" name="age" id="age" value="<%=@cat.age %>" readonly/>
     </div>
 
     <div class="form-el">
       <label for="gender">Gender:</label>
-      <input type="text" name="gender" id="gender" value="<%=@cat.gender %>"readonly/>
+      <input type="text" name="gender" id="gender" value="<%=@cat.gender %>" readonly/>
     </div>
 
     <div class="form-el">
@@ -35,8 +35,11 @@
     </div>
 
     <div class="form-el">
-      <label for="status">Status:</label>
-      <input type="text" name="status" id="status" value="<%=@cat.status %>"/>
+      <label for="adoptable">Adoptable?:</label>
+      <select id="adoptable" name="adoptable">
+        <option value="f" <%= 'selected' if @cat.adoptable == 'f' %> >No</option>
+        <option value="t" <%= 'selected' if @cat.adoptable == 't' %>>Yes</option>
+      </select>
     </div>
 
     <div class="form-el">

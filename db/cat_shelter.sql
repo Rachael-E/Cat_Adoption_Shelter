@@ -18,6 +18,6 @@ CREATE TABLE cats (
   color VARCHAR(255),
   description TEXT,
   admission_date DATE,
-  status VARCHAR(255),
+  adoptable BOOLEAN,
   owner_id INT4 REFERENCES owners(id)
 );
