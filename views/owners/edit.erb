@@ -16,7 +16,7 @@ action="/owners/<%=@owner.id%>">
 
       <div class="form-el">
         <label for="background">Background:</label>
-        <input type="text" name="background" id="background" value="<%=@owner.background %>"/>
+        <input type="text" name="background" id="background" size="100" value="<%=@owner.background %>"/>
       </div>
 
       <div class="form-el">
@@ -27,6 +27,15 @@ action="/owners/<%=@owner.id%>">
       <div class="form-el">
         <label for="total_existing_cats">Number of existing cats:</label>
         <input type="text" name="total_existing_cats" id="total_existing_cats" value="<%=@owner.total_existing_cats %>"/>
+      </div>
+
+      <div class="form-el">
+        <label for="cat_select">Select cats adopted:</label>
+        <input type="text"
+        name="cats"
+        id="cat_select"
+        value="<%@owner.cats.each do |cat| %><%= cat.name%> | <% end %>" />
+        <%
       </div>
 
       <div class="form-el">
