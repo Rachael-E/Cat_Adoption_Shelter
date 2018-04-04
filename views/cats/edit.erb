@@ -47,11 +47,13 @@
       <select name="owner_id" id="owner_select"
       selected="<%= @cat.owner_id %>">
       <% @owners.each do |owner| %>
+      <% if owner.cats.length <= 3 %>
         <% if owner.id == @cat.owner_id %>
           <option value=<%= owner.id %>
             selected><%= owner.name%></option>
             <% else %>
             <option value=<%= owner.id %>><%=owner.name %></option>
+            <% end %>
             <% end %>
 
             <% end %>
