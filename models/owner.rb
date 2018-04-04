@@ -4,7 +4,7 @@ require_relative( '../db/sql_runner' )
 class Owner
 
   attr_reader :id
-  attr_accessor :name, :age, :background, :accommodation_type, :total_existing_cats
+  attr_accessor :name, :age, :background, :accommodation_type
 
   ####  INITIALIZE #######
 
@@ -14,7 +14,6 @@ class Owner
     @age = options['age'].to_i
     @background = options['background']
     @accommodation_type = options['accommodation_type']
-    @total_existing_cats = options['total_existing_cats'].to_i
   end
 
   ########################
@@ -29,15 +28,15 @@ class Owner
       name,
       age,
       background,
-      accommodation_type,
-      total_existing_cats
+      accommodation_type
+
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@name, @age, @background, @accommodation_type, @total_existing_cats]
+    values = [@name, @age, @background, @accommodation_type]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id
@@ -58,13 +57,13 @@ class Owner
       name,
       age,
       background,
-      accommodation_type,
-      total_existing_cats
+      accommodation_type
+
     )
     =
-    ($1, $2, $3, $4, $5)
-    WHERE id = $6"
-    values = [@name, @age, @background, @accommodation_type, @total_existing_cats, @id]
+    ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@name, @age, @background, @accommodation_type, @id]
     SqlRunner.run( sql, values )
   end
 

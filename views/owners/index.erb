@@ -9,9 +9,9 @@
     <p>Age: <%= owner.age %></p>
     <p>Background: <%= owner.background %></p>
     <p>Accommodation Type: <%= owner.accommodation_type %></p>
-    <p>Number of existing cats: <%= owner.cats.length %></p>
+    <p>Number of cats: <%= owner.cats.length %></p>
     <p>Cats adopted:</p>
-    <% owner.cats.each do |cat| %><%= cat.name%>
+    <% owner.cats.each do |cat| %><%= cat.name%>,
     <% end %>
 
     </p>

@@ -6,8 +6,8 @@ CREATE TABLE owners (
   name VARCHAR(255),
   age INT4,
   background TEXT,
-  accommodation_type VARCHAR(255),
-  total_existing_cats INT
+  accommodation_type VARCHAR(255)
+
 );
 
 CREATE TABLE cats (
