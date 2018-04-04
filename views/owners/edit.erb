@@ -6,7 +6,7 @@ action="/owners/<%=@owner.id%>">
 
       <div class="form-el">
         <label for="name">Name:</label>
-        <input type="text" name="name" id="name" value="<%=@owner.name %>"/>
+        <input type="text" name="name" id="name" value="<%=@owner.name %>"readonly/>
       </div>
 
       <div class="form-el">
@@ -30,12 +30,13 @@ action="/owners/<%=@owner.id%>">
       </div>
 
       <div class="form-el">
-        <label for="cat_select">Select cats adopted:</label>
+        <label for="cat_select">Cats adopted:</label>
         <input type="text"
         name="cats"
         id="cat_select"
-        value="<%@owner.cats.each do |cat| %><%= cat.name%> | <% end %>" />
+        value="<%@owner.cats.each do |cat| %><%= cat.name%> | <% end %>" /disabled>
         <%
+
       </div>
 
       <div class="form-el">
