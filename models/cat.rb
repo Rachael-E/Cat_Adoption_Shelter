@@ -51,7 +51,7 @@ def save()
 
   ###  READ  ###
   def self.all()
-    sql = "SELECT * FROM cats"
+    sql = "SELECT * FROM cats ORDER BY name"
     cats_hashes = SqlRunner.run(sql)
     cats_objects = cats_hashes.map{|cat| Cat.new(cat)}
     return cats_objects

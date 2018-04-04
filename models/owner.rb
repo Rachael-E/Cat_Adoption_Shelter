@@ -44,7 +44,7 @@ class Owner
 
   ###  READ  ###
   def self.all()
-    sql = "SELECT * FROM owners"
+    sql = "SELECT * FROM owners ORDER BY name"
     owners_hashes = SqlRunner.run(sql)
     owners_objects = owners_hashes.map{|owner| Owner.new(owner)}
     return owners_objects
