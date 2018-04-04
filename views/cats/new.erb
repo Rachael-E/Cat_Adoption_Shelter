@@ -13,8 +13,10 @@
       </div>
 
       <div class="form-el">
-        <label for="gender">Gender:</label>
-        <input type="text" name="gender" id="gender" />
+        <label for="gender">Gender:</label></br>
+        <input type="radio" name="gender" value="male">Male<br>
+        <input type="radio" name="gender" value="female">Female<br>
+
       </div>
 
       <div class="form-el">
@@ -24,7 +26,7 @@
 
       <div class="form-el">
         <label for="description">Description:</label>
-        <input type="text" name="description" id="description" />
+        <input type="text" name="description" id="description" size ="100"/>
       </div>
 
       <div class="form-el">
@@ -34,7 +36,10 @@
 
       <div class="form-el">
         <label for="adoptable">Adoptable?:</label>
-        <input type="text" name="adoptable" id="adoptable" />
+      <select id="adoptable" name="adoptable">
+        <option value="f">No</option>
+        <option value="t">Yes</option>
+      </select>
       </div>
 
       <div class="form-el">
