@@ -57,6 +57,15 @@ def save()
     return cats_objects
   end
 
+  ### To show all cats who are adoptable ###
+  def self.adoptable
+    sql = "SELECT * FROM cats WHERE adoptable = TRUE"
+    cats_hashes = SqlRunner.run(sql)
+    cats_objects = cats_hashes.map{|cat| Cat.new(cat)}
+    return cats_objects
+
+  end
+
   ### UPDATE ###
   def update()
     sql = "UPDATE cats

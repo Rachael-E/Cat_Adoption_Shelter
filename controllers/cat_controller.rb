@@ -9,6 +9,11 @@ get '/cats' do
   erb( :"cats/index" )
 end
 
+get '/cats/adoptable' do
+  @cats = Cat.adoptable
+  erb( :"cats/index" )
+end
+
 get '/cats/new' do
   @owners = Owner.all
   erb(:"cats/new")
