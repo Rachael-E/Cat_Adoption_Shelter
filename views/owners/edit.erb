@@ -29,7 +29,7 @@ action="/owners/<%=@owner.id%>">
         <input type="text"
         name="cats"
         id="cat_select"
-        value="<%@owner.cats.each do |cat| %><%= cat.name%> | <% end %>" /disabled>
+        value="<%@owner.cats.each do |cat| %><%= cat.name%> , <% end %>" /disabled>
         <%
 
       </div>

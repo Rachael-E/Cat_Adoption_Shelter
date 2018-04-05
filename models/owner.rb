@@ -50,6 +50,14 @@ class Owner
     return owners_objects
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    owner = Owner.new(result)
+    return owner
+  end
+
   ### UPDATE ###
   def update()
     sql = "UPDATE owners
@@ -95,14 +103,6 @@ class Owner
 
 
 
-  ######### CLASS METHODS  ##################
-  def self.find(id)
-    sql = "SELECT * FROM owners WHERE id = $1"
-    values = [id]
-    result = SqlRunner.run(sql, values).first
-    owner = Owner.new(result)
-    return owner
-  end
 
 
 end

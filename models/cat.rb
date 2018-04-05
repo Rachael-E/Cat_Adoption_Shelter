@@ -57,6 +57,14 @@ def save()
     return cats_objects
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM cats WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    cat = Cat.new(result)
+    return cat
+  end
+
   ### To show all cats who are adoptable ###
   def self.adoptable
     sql = "SELECT * FROM cats WHERE adoptable = TRUE"
@@ -106,14 +114,7 @@ def owner
   return owner
 end
 
-######### CLASS METHODS  ##################
-def self.find(id)
-  sql = "SELECT * FROM cats WHERE id = $1"
-  values = [id]
-  result = SqlRunner.run(sql, values).first
-  cat = Cat.new(result)
-  return cat
-end
+
 
 
 
