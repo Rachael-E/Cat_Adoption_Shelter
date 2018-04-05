@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/style_cat.css">
   </head>
   <body>
+    <h1 id="logo">Maggie's Moggies</h1>
     <nav id="menu">
       <li class="menu-item"><a
         href='/'>Home</a></li>
@@ -19,8 +20,11 @@
         href='/owners'>Owner List</a></li>
         <li class="menu-item"><a href='/owners/new'>Register a new owner</a></li>
       </nav>
-      <h1 id="logo">Maggie's Moggies</h1>
+
 
     <%= yield %>
+    <div class="footer">
+      <p>&copy; Maggie's Moggies 2018</p>
+    </div>
   </body>
 </html>
