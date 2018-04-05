@@ -1,17 +1,24 @@
 body {
   font-family: 'Indie Flower', cursive;
   color: #402f2f;
-  background-color: #95999a;
+background-image: url("images/owners_background.png");
+background-size:cover;
+
   font-size: 20px;
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
   border-width: 2px;
   border-color: black;
   border-style: dashed;
   padding: 10px;
+  background-image: url("images/cat_banner.jpg");
+  background-repeat:no-repeat;
+  background-size: 20%;
+  background-color: #f6d6ad;
+
 }
 
 nav {
@@ -102,6 +109,7 @@ a:hover {
 
 .owners {
   border: 1px solid black;
+  background-image: url("images/owners_background.png");
 }
 
 .owners td {
