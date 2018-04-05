@@ -4,7 +4,7 @@
   <% @cats.each do |cat| %>
 
     <div class="cat">
-      <h3><a href="/cats/<%= cat.id%>"><%=cat.name%></a>
+      <h3><a href="/cats/<%= cat.id%>"><%=cat.name%> (click to edit)</a>
       </h3>
       <p>Age: <%= cat.age %></p>
       <p>Gender: <%= cat.gender %></p>
@@ -14,7 +14,7 @@
       <p>Adoptable?: <%= cat.adoptable == 't' ? "Yes" : "No" %></p>
       <img src="/images/<%= cat.id %>.jpeg" alt="cat photo"> </img>
       <p>Owner: <%= cat.owner.name %></p>
-      <hr>
+
     </div>
 
   <% end %>
