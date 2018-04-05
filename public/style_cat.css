@@ -14,6 +14,36 @@ h2 {
   padding: 10px;
 }
 
+nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #9e5e5e;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+nav li a {
+  color: white;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+li a:hover:not(.menu-item) {
+  background-color: #ead0d0;
+}
+
+li {
+  float:left;
+}
+
+/* .menu-item a {
+  color: white;
+} */
+
 #logo {
 text-align: center;
   padding: 20px;
