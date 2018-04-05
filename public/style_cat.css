@@ -23,8 +23,7 @@ nav {
   border-width: 2px;
   border-style: solid;
   border-color: black;
-  margin-left: auto;
-  margin-right: auto;
+
 }
 
 nav li a {
@@ -32,6 +31,8 @@ nav li a {
   display: block;
   text-align: center;
   padding: 14px 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 nav li a:hover {
@@ -97,6 +98,15 @@ a:hover {
   border-color: #402f2f;
   border-width: 2px;
   margin-bottom: 5px;
+}
+
+.owners {
+  border: 1px solid black;
+}
+
+.owners td {
+  border: 1px solid black;
+  padding: 5px;
 }
 
 /* Media queries */

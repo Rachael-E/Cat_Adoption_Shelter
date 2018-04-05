@@ -1,23 +1,34 @@
 <h2> Owners registered at Maggie's Moggies </h2>
 
 <div id="owner-wrapper">
-  <% @owners.each do |owner| %>
 
-  <div class="owner">
-    <h3><a href="/owners/<%=owner.id%>"><%=owner.name%></a>
-    </h3>
-    <p>Age: <%= owner.age %></p>
-    <p>Background: <%= owner.background %></p>
-    <p>Accommodation Type: <%= owner.accommodation_type %></p>
-    <p>Number of cats: <%= owner.cats.length %></p>
-    <p>Cats adopted:</p>
-    <% owner.cats.each do |cat| %><%= cat.name%>,
+    <table class="owners">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Background</th>
+        <th>Accommodation Type</th>
+        <th>Number of cats</th>
+        <th>Cats adopted</th>
+      </tr>
+
+    <% @owners.each do |owner| %>
+      <tr>
+        <td><a href="/owners/<%=owner.id%>"><%=owner.name%></a></td>
+        <td><%= owner.age %></td>
+        <td><%= owner.background %></td>
+        <td><%= owner.accommodation_type %></td>
+        <td><%= owner.cats.length %></td>
+        <td>
+          <% owner.cats.each do |cat| %>
+            <%= cat.name %>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
 
-    </p>
+  </table>
 
-<hr></hr>
-  </div>
+    <hr></hr>
 
-  <% end %>
 </div>
