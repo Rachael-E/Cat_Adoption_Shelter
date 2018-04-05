@@ -1,7 +1,7 @@
 body {
   font-family: 'Indie Flower', cursive;
-  color: #a04e5c;
-  background-color: #e4dbdf;
+  color: #402f2f;
+  background-color: #95999a;
   font-size: 20px;
 }
 
@@ -23,7 +23,8 @@ nav {
   border-width: 2px;
   border-style: solid;
   border-color: black;
-
+  margin-left: auto;
+  margin-right: auto;
 }
 
 nav li a {
@@ -33,6 +34,10 @@ nav li a {
   padding: 14px 16px;
 }
 
+nav li a:hover {
+  color: black;
+}
+
 li a:hover:not(.menu-item) {
   background-color: #ead0d0;
 }
@@ -40,8 +45,10 @@ li a:hover:not(.menu-item) {
 li {
   float:left;
   border-right: 1px solid black;
-  border-bottom: 1px solid black;
+}
 
+li:last-child {
+  border-right: none;
 }
 
 /* .menu-item a {
@@ -67,7 +74,7 @@ a {
 }
 
 a:hover {
-  color: #e48609;
+  color: white;
 }
 
 .footer {
@@ -80,3 +87,23 @@ a:hover {
   width: 100%;
 
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70% ;
+  border-style: solid;
+  border-color: #402f2f;
+  border-width: 2px;
+  margin-bottom: 5px;
+}
+
+/* Media queries */
+/* @media screen and (max-width: 600px) {
+
+  nav {
+    font-size: 12px;
+  }
+
+} */
