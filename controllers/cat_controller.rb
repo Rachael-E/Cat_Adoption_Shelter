@@ -11,7 +11,7 @@ end
 
 get '/cats/adoptable' do
   @cats = Cat.adoptable
-  erb( :"cats/index" )
+  erb( :"adoptable/index" )
 end
 
 get '/cats/new' do
