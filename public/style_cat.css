@@ -81,9 +81,7 @@ a {
   color: #27736d;
 }
 
-a:hover {
-  color: white;
-}
+
 
 .footer {
   position: absolute;
@@ -113,8 +111,44 @@ a:hover {
 }
 
 .owners td {
-  border: 1px solid black;
+  border: 1px solid #402f2f;
   padding: 5px;
+}
+
+.cat img {
+    width: 320px;
+    height: 320px;
+    object-fit:  cover;
+}
+
+.cat h3 {
+    background: #9e5e5e;
+    text-align: center;
+}
+
+.cat h3 a {
+  color: black;
+  justify-content: center;
+}
+
+.cat h3 a:hover {
+  color: white;
+}
+
+.cat {
+    padding: 20px;
+    background-color: antiquewhite;
+    margin: 10px 10px;
+    /* width: 40%; */
+    flex: 1;
+    border: 1px solid black;
+}
+
+
+#cat-wrapper {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
 }
 
 /* Media queries */
