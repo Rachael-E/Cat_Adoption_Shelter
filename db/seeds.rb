@@ -1,6 +1,6 @@
 require_relative('../models/cat')
 require_relative('../models/owner')
-require ("pry-byebug")
+
 
 Owner.delete_all()
 Cat.delete_all()
